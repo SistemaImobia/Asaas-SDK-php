@@ -1,12 +1,12 @@
 <?php
-namespace Softr\Asaas\Entity;
+namespace Imobia\Asaas\Entity;
 
 /**
  * Document Entity
  *
  * @author David Berri <dwbwill@gmail.com>
  */
-final class Document extends \Softr\Asaas\Entity\AbstractEntity
+final class Document extends \Imobia\Asaas\Entity\AbstractEntity
 {
     /**
      * @var int

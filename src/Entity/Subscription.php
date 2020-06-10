@@ -1,12 +1,12 @@
 <?php
-namespace Softr\Asaas\Entity;
+namespace Imobia\Asaas\Entity;
 
 /**
  * Subscription Entity
  *
  * @author Agência Softr <agencia.softr@gmail.com>
  */
-final class Subscription extends \Softr\Asaas\Entity\AbstractEntity
+final class Subscription extends \Imobia\Asaas\Entity\AbstractEntity
 {
     /**
      * @var int

@@ -1,6 +1,6 @@
 <?php
 
-namespace Softr\Asaas\Exception;
+namespace Imobia\Asaas\Exception;
 
 class ValidationException extends HttpException
 {

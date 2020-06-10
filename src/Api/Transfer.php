@@ -1,14 +1,14 @@
 <?php
-namespace Softr\Asaas\Api;
+namespace Imobia\Asaas\Api;
 
-use Softr\Asaas\Entity\Transfer as TransferEntity;
+use Imobia\Asaas\Entity\Transfer as TransferEntity;
 
 /**
  * Transfer API Endpoint
  *
  * @author David Berri <dwbwill@gmail.com>
  */
-class Transfer extends \Softr\Asaas\Api\AbstractApi
+class Transfer extends \Imobia\Asaas\Api\AbstractApi
 {
     /**
      * Get all transfers

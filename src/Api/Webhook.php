@@ -1,14 +1,14 @@
 <?php
-namespace Softr\Asaas\Api;
+namespace Imobia\Asaas\Api;
 
-use Softr\Asaas\Entity\Webhook as WebhookEntity;
+use Imobia\Asaas\Entity\Webhook as WebhookEntity;
 
 /**
  * Webhook API Endpoint
  *
  * @author David Berri <dwbwill@gmail.com>
  */
-class Webhook extends \Softr\Asaas\Api\AbstractApi
+class Webhook extends \Imobia\Asaas\Api\AbstractApi
 {
     /**
      * Get the active Webhook

@@ -1,12 +1,12 @@
 <?php
-namespace Softr\Asaas\Api;
+namespace Imobia\Asaas\Api;
 
 /**
  * Wallet API Endpoint
  *
  * @author David Berri <dwbwill@gmail.com>
  */
-class Wallet extends \Softr\Asaas\Api\AbstractApi
+class Wallet extends \Imobia\Asaas\Api\AbstractApi
 {
     /**
      * Get all wallets

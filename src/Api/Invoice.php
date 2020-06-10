@@ -1,14 +1,14 @@
 <?php
-namespace Softr\Asaas\Api;
+namespace Imobia\Asaas\Api;
 
-use Softr\Asaas\Entity\Invoice as InvoiceEntity;
+use Imobia\Asaas\Entity\Invoice as InvoiceEntity;
 
 /**
  * Invoice API Endpoint
  *
  * @author David Berri <dwbwill@gmail.com>
  */
-class Invoice extends \Softr\Asaas\Api\AbstractApi
+class Invoice extends \Imobia\Asaas\Api\AbstractApi
 {
     /**
      * Lists invoices

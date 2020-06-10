@@ -1,14 +1,14 @@
 <?php
-namespace Softr\Asaas\Api;
+namespace Imobia\Asaas\Api;
 
-use Softr\Asaas\Entity\Account as AccountEntity;
+use Imobia\Asaas\Entity\Account as AccountEntity;
 
 /**
  * Account API Endpoint
  *
  * @author David Berri <dwbwill@gmail.com>
  */
-class Account extends \Softr\Asaas\Api\AbstractApi
+class Account extends \Imobia\Asaas\Api\AbstractApi
 {
     /**
      * Creates new account

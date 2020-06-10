@@ -1,13 +1,13 @@
 <?php
 
-namespace Softr\Asaas\Entity;
+namespace Imobia\Asaas\Entity;
 
 /**
  * FinanctialTransaction Entity
  *
  * @author David Berri <dwbwill@gmail.com>
  */
-final class FinancialTransaction extends \Softr\Asaas\Entity\AbstractEntity
+final class FinancialTransaction extends \Imobia\Asaas\Entity\AbstractEntity
 {
     /**
      * @var string

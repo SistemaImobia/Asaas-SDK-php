@@ -1,14 +1,14 @@
 <?php
-namespace Softr\Asaas\Api;
+namespace Imobia\Asaas\Api;
 
-use Softr\Asaas\Entity\MyAccount as MyAccountEntity;
+use Imobia\Asaas\Entity\MyAccount as MyAccountEntity;
 
 /**
  * Account API Endpoint
  *
  * @author Mateus Belli <mateus@useimobia.com>
  */
-class MyAccount extends \Softr\Asaas\Api\AbstractApi
+class MyAccount extends \Imobia\Asaas\Api\AbstractApi
 {
     /**
      * Get registration situation

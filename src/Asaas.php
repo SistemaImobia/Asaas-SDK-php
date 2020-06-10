@@ -2,21 +2,21 @@
 namespace Imobia\Asaas;
 
 // API's
-use Softr\Asaas\Adapter\AdapterInterface;
-use Softr\Asaas\Api\Account;
-use Softr\Asaas\Api\Balance;
-use Softr\Asaas\Api\BankAccount;
-use Softr\Asaas\Api\Customer;
-use Softr\Asaas\Api\CustomerFiscalInfo;
-use Softr\Asaas\Api\Document;
-use Softr\Asaas\Api\FinancialTransaction;
-use Softr\Asaas\Api\Invoice;
-use Softr\Asaas\Api\Notification;
-use Softr\Asaas\Api\Payment;
-use Softr\Asaas\Api\Subscription;
-use Softr\Asaas\Api\Transfer;
-use Softr\Asaas\Api\Wallet;
-use Softr\Asaas\Api\Webhook;
+use Imobia\Asaas\Adapter\AdapterInterface;
+use Imobia\Asaas\Api\Account;
+use Imobia\Asaas\Api\Balance;
+use Imobia\Asaas\Api\BankAccount;
+use Imobia\Asaas\Api\Customer;
+use Imobia\Asaas\Api\CustomerFiscalInfo;
+use Imobia\Asaas\Api\Document;
+use Imobia\Asaas\Api\FinancialTransaction;
+use Imobia\Asaas\Api\Invoice;
+use Imobia\Asaas\Api\Notification;
+use Imobia\Asaas\Api\Payment;
+use Imobia\Asaas\Api\Subscription;
+use Imobia\Asaas\Api\Transfer;
+use Imobia\Asaas\Api\Wallet;
+use Imobia\Asaas\Api\Webhook;
 
 /**
  * Asass API Wrapper

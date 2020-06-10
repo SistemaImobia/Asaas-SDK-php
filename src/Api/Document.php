@@ -1,16 +1,16 @@
 <?php
 
-namespace Softr\Asaas\Api;
+namespace Imobia\Asaas\Api;
 
 // Entities
-use Softr\Asaas\Entity\Document as DocumentEntity;
+use Imobia\Asaas\Entity\Document as DocumentEntity;
 
 /**
  * Document API Endpoint
  *
  * @author David Berri <dwbwill@gmail.com>
  */
-class Document extends \Softr\Asaas\Api\AbstractApi
+class Document extends \Imobia\Asaas\Api\AbstractApi
 {
     public function getAll(array $filters = [])
     {

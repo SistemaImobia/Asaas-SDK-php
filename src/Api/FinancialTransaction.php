@@ -1,14 +1,14 @@
 <?php
-namespace Softr\Asaas\Api;
+namespace Imobia\Asaas\Api;
 
-use Softr\Asaas\Entity\FinancialTransaction as FinancialTransactionEntity;
+use Imobia\Asaas\Entity\FinancialTransaction as FinancialTransactionEntity;
 
 /**
  * FinancialTransaction API Endpoint
  *
  * @author David Berri <dwbwill@gmail.com>
  */
-class FinancialTransaction extends \Softr\Asaas\Api\AbstractApi
+class FinancialTransaction extends \Imobia\Asaas\Api\AbstractApi
 {
     /**
      * Get all FinancialTransactions

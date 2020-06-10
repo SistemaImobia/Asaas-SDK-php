@@ -1,12 +1,12 @@
 <?php
-namespace Softr\Asaas\Entity;
+namespace Imobia\Asaas\Entity;
 
 /**
  * Transfer Entity
  *
  * @author David Berri <dwbwill@gmail.com>
  */
-final class Transfer extends \Softr\Asaas\Entity\AbstractEntity
+final class Transfer extends \Imobia\Asaas\Entity\AbstractEntity
 {
     /**
      * @var int

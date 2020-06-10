@@ -1,12 +1,12 @@
 <?php
-namespace Softr\Asaas\Api;
+namespace Imobia\Asaas\Api;
 
 /**
  * Balance API Endpoint
  *
  * @author David Berri <dwbwill@gmail.com>
  */
-class Balance extends \Softr\Asaas\Api\AbstractApi
+class Balance extends \Imobia\Asaas\Api\AbstractApi
 {
     public function getAll()
     {

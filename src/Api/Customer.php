@@ -1,15 +1,15 @@
 <?php
-namespace Softr\Asaas\Api;
+namespace Imobia\Asaas\Api;
 
 // Entities
-use Softr\Asaas\Entity\Customer as CustomerEntity;
+use Imobia\Asaas\Entity\Customer as CustomerEntity;
 
 /**
  * Customer API Endpoint
  *
  * @author Agência Softr <agencia.softr@gmail.com>
  */
-class Customer extends \Softr\Asaas\Api\AbstractApi
+class Customer extends \Imobia\Asaas\Api\AbstractApi
 {
     /**
      * Get all customers

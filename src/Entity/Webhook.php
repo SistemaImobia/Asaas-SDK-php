@@ -1,13 +1,13 @@
 <?php
 
-namespace Softr\Asaas\Entity;
+namespace Imobia\Asaas\Entity;
 
 /**
  * Webhook Entity
  *
  * @author David Berri <dwbwill@gmail.com>
  */
-final class Webhook extends \Softr\Asaas\Entity\AbstractEntity
+final class Webhook extends \Imobia\Asaas\Entity\AbstractEntity
 {
     /**
      * @var string

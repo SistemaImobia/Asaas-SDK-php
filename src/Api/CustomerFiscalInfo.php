@@ -1,12 +1,12 @@
 <?php
-namespace Softr\Asaas\Api;
+namespace Imobia\Asaas\Api;
 
 /**
  * Customer Fiscal Info API Endpoint
  *
  * @author David Berri <dwbwill@gmail.com>
  */
-class CustomerFiscalInfo extends \Softr\Asaas\Api\AbstractApi
+class CustomerFiscalInfo extends \Imobia\Asaas\Api\AbstractApi
 {
     public function index()
     {

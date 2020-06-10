@@ -1,14 +1,14 @@
 <?php
-namespace Softr\Asaas\Api;
+namespace Imobia\Asaas\Api;
 
-use Softr\Asaas\Entity\BankAccount as BankAccountEntity;
+use Imobia\Asaas\Entity\BankAccount as BankAccountEntity;
 
 /**
  * BankAccount API Endpoint
  *
  * @author David Berri <dwbwill@gmail.com>
  */
-class BankAccount extends \Softr\Asaas\Api\AbstractApi
+class BankAccount extends \Imobia\Asaas\Api\AbstractApi
 {
     public function getAll()
     {

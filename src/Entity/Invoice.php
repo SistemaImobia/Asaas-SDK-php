@@ -1,13 +1,13 @@
 <?php
 
-namespace Softr\Asaas\Entity;
+namespace Imobia\Asaas\Entity;
 
 /**
  * Invoice Entity
  *
  * @author David Berri <dwbwill@gmail.com>
  */
-final class Invoice extends \Softr\Asaas\Entity\AbstractEntity
+final class Invoice extends \Imobia\Asaas\Entity\AbstractEntity
 {
     /**
      * @var string
