@@ -1,5 +1,5 @@
 <?php
-namespace Softr\Asaas;
+namespace Imobia\Asaas;
 
 // API's
 use Softr\Asaas\Adapter\AdapterInterface;
