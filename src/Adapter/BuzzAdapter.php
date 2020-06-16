@@ -1,17 +1,16 @@
 <?php
-namespace Softr\Asaas\Adapter;
 
+namespace Imobia\Asaas\Adapter;
 
 // Asaas
-use Softr\Asaas\Exception\HttpException;
-use Softr\Asaas\Adapter\BuzzAsaasAuthListener;
+use Imobia\Asaas\Exception\HttpException;
+use Imobia\Asaas\Adapter\BuzzAsaasAuthListener;
 
 // Buzz
 use Buzz\Browser;
 use Buzz\Client\Curl;
 use Buzz\Client\FileGetContents;
 use Buzz\Message\Response;
-
 
 /**
  * Buzz Adapter

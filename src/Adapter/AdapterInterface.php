@@ -1,7 +1,8 @@
 <?php
-namespace Softr\Asaas\Adapter;
 
-use Softr\Asaas\Exception\HttpException;
+namespace Imobia\Asaas\Adapter;
+
+use Imobia\Asaas\Exception\HttpException;
 
 /**
  * Adapter Http Interface

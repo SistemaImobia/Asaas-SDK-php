@@ -1,5 +1,6 @@
 <?php
-namespace Softr\Asaas\Adapter;
+
+namespace Imobia\Asaas\Adapter;
 
 // Asaas
 use GuzzleHttp\Client;
@@ -7,9 +8,9 @@ use GuzzleHttp\ClientInterface;
 
 // GuzzleHttp
 use GuzzleHttp\Exception\RequestException;
-use Softr\Asaas\Exception\ForbiddenException;
-use Softr\Asaas\Exception\HttpException;
-use Softr\Asaas\Exception\ValidationException;
+use Imobia\Asaas\Exception\ForbiddenException;
+use Imobia\Asaas\Exception\HttpException;
+use Imobia\Asaas\Exception\ValidationException;
 
 /**
  * Guzzle Http Adapter

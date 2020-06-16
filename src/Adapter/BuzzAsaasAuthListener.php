@@ -1,6 +1,6 @@
 <?php
-namespace Softr\Asaas\Adapter;
 
+namespace Imobia\Asaas\Adapter;
 
 // Buzz
 use Buzz\Message\MessageInterface;
