@@ -19,7 +19,7 @@ class MyAccount extends \Imobia\Asaas\Api\AbstractApi
     {
         $status = $this->adapter->get(sprintf('%s/myAccount/status', $this->endpoint));
 
-        return $status;
+        return new MyAccountEntity($status);
     }
 
     /**
