@@ -17,6 +17,7 @@ use Imobia\Asaas\Api\Subscription;
 use Imobia\Asaas\Api\Transfer;
 use Imobia\Asaas\Api\Wallet;
 use Imobia\Asaas\Api\Webhook;
+use Imobia\Asaas\Api\MyAccount;
 
 /**
  * Asass API Wrapper
@@ -199,5 +200,10 @@ class Asaas
     public function extrato()
     {
         return new FinancialTransaction($this->adapter, $this->ambiente, $this->versao);
+    }
+
+    public function myAccount()
+    {
+        return new MyAccount($this->adapter, $this->ambiente, $this->versao);
     }
 }
