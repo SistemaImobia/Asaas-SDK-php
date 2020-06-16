@@ -13,10 +13,9 @@ class MyAccount extends \Imobia\Asaas\Api\AbstractApi
     /**
      * Get registration situation
      *
-     * @param   array  $data  Account Data
      * @return  MyAccountEntity
      */
-    public function status(array $data)
+    public function status()
     {
         $status = $this->adapter->get(sprintf('%s/myAccount/status', $this->endpoint));
 
@@ -26,10 +25,9 @@ class MyAccount extends \Imobia\Asaas\Api\AbstractApi
     /**
      * Get documentation situation
      *
-     * @param   array  $data  Account Data
      * @return  MyAccountEntity
      */
-    public function documentation(array $data)
+    public function documentation()
     {
         $documentation = $this->adapter->get(sprintf('%s/myAccount/status/documentation', $this->endpoint));
 
