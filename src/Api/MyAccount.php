@@ -4,7 +4,7 @@ namespace Imobia\Asaas\Api;
 use Imobia\Asaas\Entity\MyAccount as MyAccountEntity;
 
 /**
- * Account API Endpoint
+ * MyAccount API Endpoint
  *
  * @author Mateus Belli <mateus@useimobia.com>
  */
@@ -19,7 +19,7 @@ class MyAccount extends \Imobia\Asaas\Api\AbstractApi
     {
         $status = $this->adapter->get(sprintf('%s/myAccount/status', $this->endpoint));
 
-        return new MyAccountEntity($status);
+        return new MyAccountEntity(json_decode($status));
     }
 
     /**
