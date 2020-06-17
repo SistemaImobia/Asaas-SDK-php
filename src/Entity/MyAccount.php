@@ -2,11 +2,11 @@
 namespace Imobia\Asaas\Entity;
 
 /**
- * Base Meta Entity
+ * MyAccount Entity
  *
- * @author Agência Softr <agencia.softr@gmail.com>
+ * @author Mateus Belli <mateus@useimobia.com.br>
  */
-final class Meta extends \Imobia\Asaas\Entity\AbstractEntity
+final class MyAccount extends \Imobia\Asaas\Entity\AbstractEntity
 {
     /**
      * @var string
