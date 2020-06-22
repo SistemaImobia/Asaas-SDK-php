@@ -83,4 +83,9 @@ final class BankAccount extends \Imobia\Asaas\Entity\AbstractEntity
      * @var string
      */
     public $responsibleEmail;
+
+    /**
+     * @var string
+     */
+    public $status;
 }
