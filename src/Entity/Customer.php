@@ -19,8 +19,8 @@ final class Customer extends \Imobia\Asaas\Entity\AbstractEntity
     public $name;
 
     /**
-     * @var strin
-    g     */
+     * @var string
+     */
     public $email;
 
     /**
