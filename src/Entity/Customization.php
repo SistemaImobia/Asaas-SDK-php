@@ -2,7 +2,7 @@
 
 namespace Imobia\Asaas\Entity;
 
-final class Customization
+final class Customization extends \Imobia\Asaas\Entity\AbstractEntity
 {
     /**
      * @var string
