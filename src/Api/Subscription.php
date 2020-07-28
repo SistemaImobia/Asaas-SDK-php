@@ -27,7 +27,7 @@ class Subscription extends \Imobia\Asaas\Api\AbstractApi
 
         return array_map(function($subscription)
         {
-            return new SubscriptionEntity($subscription->subscription);
+            return new SubscriptionEntity($subscription);
         }, $subscriptions->data);
     }
 
