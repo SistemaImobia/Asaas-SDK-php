@@ -145,12 +145,4 @@ final class Payment extends \Imobia\Asaas\Entity\AbstractEntity
      * @var boolean
      */
     public $postalService;
-
-    /**
-     * @param  string  $dueDate
-     */
-    public function setDueDate($dueDate)
-    {
-        $this->dueDate = static::convertDateTime($dueDate);
-    }
 }
