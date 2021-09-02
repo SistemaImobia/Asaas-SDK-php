@@ -12,8 +12,15 @@ class Bank extends \Imobia\Asaas\Api\AbstractApi
 {
     public function getAll()
     {
-        $balance = $this->adapter->get(sprintf('%s/banks', $this->endpoint));
+        $banks = $this->adapter->get(sprintf('%s/banks', $this->endpoint));
 
-        return new BankEntity(json_decode($balance));
+        $banks = json_decode($banks);
+
+        $this->extractMeta($banks);
+
+        return array_map(function($banks)
+        {
+            return new BankEntity($banks);
+        }, $banks->data);
     }
 }
