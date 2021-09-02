@@ -40,9 +40,9 @@ class Asaas
      */
     public function __construct(AdapterInterface $adapter, $ambiente = 'producao', $versao = 'v3')
     {
-        $this->adapter = $adapter;
+        $this->adapter  = $adapter;
         $this->ambiente = $ambiente;
-        $this->versao = $versao;
+        $this->versao   = $versao;
     }
 
     /**
@@ -52,7 +52,7 @@ class Asaas
      */
     public function customer()
     {
-        return new \Imobia\Asaas\Api\ustomer($this->adapter, $this->ambiente, $this->versao);
+        return new \Imobia\Asaas\Api\Customer($this->adapter, $this->ambiente, $this->versao);
     }
 
     /**
@@ -133,6 +133,16 @@ class Asaas
     public function customerFiscalInfo()
     {
         return new \Imobia\Asaas\Api\CustomerFiscalInfo($this->adapter, $this->ambiente, $this->versao);
+    }
+
+    /**
+     * Get bank endpoint
+     *
+     * @return  Bank
+     */
+    public function bank()
+    {
+        return new \Imobia\Asaas\Api\Bank($this->adapter, $this->ambiente, $this->versao);
     }
 
     /**
