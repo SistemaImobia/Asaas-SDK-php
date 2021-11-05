@@ -59,6 +59,11 @@ final class Transfer extends \Imobia\Asaas\Entity\AbstractEntity
     public $authorized;
 
     /**
+     * @var string
+     */
+    public $failReason;
+
+    /**
      * @var array
      * [bank: [code: ""], accountName, ownerName,
      *  ownerBirthDate, cpfCnpj, agency, account,
