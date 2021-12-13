@@ -37,5 +37,35 @@ final class FinancialTransaction extends \Imobia\Asaas\Entity\AbstractEntity
     /**
      * @var string
      */
-    public $description;
+    public $paymentId;
+
+    /**
+     * @var string
+     */
+    public $transferId;
+
+    /**
+     * @var string
+     */
+    public $antecipationId;
+
+    /**
+     * @var string
+     */
+    public $billId;
+
+    /**
+     * @var string
+     */
+    public $invoiceId;
+
+    /**
+     * @var string
+     */
+    public $paymentDunningId;
+
+    /**
+     * @var string
+     */
+    public $creditBureauReportId;
 }
