@@ -7,7 +7,7 @@ use Imobia\Asaas\Adapter\AdapterInterface;
  * Asass API Wrapper
  *
  * @author Agência Softr <agencia.softr@gmail.com>
- * @author Mateus Belli <mateus@useimobia.com.br>
+ * @author Mateus Belli <mateusbelli@hotmail.com>
  */
 class Asaas
 {
@@ -209,5 +209,13 @@ class Asaas
     public function customization()
     {
         return new \Imobia\Asaas\Api\Customization($this->adapter, $this->ambiente, $this->versao);
+    }
+
+    /**
+     * Ger Bill endpoint
+     */
+    public function bill()
+    {
+        return new \Imobia\Asaas\Api\Bill($this->adapter, $this->ambiente, $this->versao);
     }
 }
