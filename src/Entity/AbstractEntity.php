@@ -5,6 +5,7 @@ namespace Imobia\Asaas\Entity;
  * Abstract Entity
  *
  * @author Agência Softr <agencia.softr@gmail.com>
+ * @author Mateus Belli <mateusbelli@hotmail.com>
  */
 abstract class AbstractEntity
 {
@@ -26,6 +27,16 @@ abstract class AbstractEntity
         }
 
         $this->build($parameters);
+    }
+
+    /**
+     * Transform entity object to an array
+     * 
+     * @return array
+     */
+    public function toArray()
+    {
+        return get_object_vars($this);
     }
 
     /**
