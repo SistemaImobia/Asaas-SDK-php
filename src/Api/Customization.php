@@ -6,14 +6,14 @@ use Imobia\Asaas\Entity\Customization as CustomizationEntity;
 
 /**
  * PaymentCheckoutConfig API Endpoint
- * 
- * @author Mateus Belli <mateus@useimobia.com.br>
+ *
+ * @author Mateus Belli <mateusbelli@hotmail.com>
  */
 class Customization extends \Imobia\Asaas\Api\AbstractApi
 {
     /**
      * Recover customization
-     * 
+     *
      * @return CustomizationEntity
      */
     public function get()
@@ -27,7 +27,7 @@ class Customization extends \Imobia\Asaas\Api\AbstractApi
 
     /**
      * Update customization
-     * 
+     *
      * @param array $data
      * @return CustomizationEntity
      */

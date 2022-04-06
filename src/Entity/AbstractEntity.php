@@ -16,13 +16,11 @@ abstract class AbstractEntity
      */
     public function __construct($parameters = null)
     {
-        if(!$parameters)
-        {
+        if (!$parameters) {
             return;
         }
 
-        if($parameters instanceof \stdClass)
-        {
+        if ($parameters instanceof \stdClass) {
             $parameters = get_object_vars($parameters);
         }
 
@@ -31,7 +29,7 @@ abstract class AbstractEntity
 
     /**
      * Transform entity object to an array
-     * 
+     *
      * @return array
      */
     public function toArray()
@@ -46,18 +44,15 @@ abstract class AbstractEntity
      */
     public function build(array $parameters)
     {
-        foreach($parameters as $property => $value)
-        {
-            if(property_exists($this, $property))
-            {
+        foreach ($parameters as $property => $value) {
+            if (property_exists($this, $property)) {
                 $this->$property = $value;
 
                 // Apply mutator
 
                 $mutator = 'set' . ucfirst(static::convertToCamelCase($property));
 
-                if(method_exists($this, $mutator))
-                {
+                if (method_exists($this, $mutator)) {
                     call_user_func_array(array($this, $mutator), [$value]);
                 }
             }
@@ -72,15 +67,13 @@ abstract class AbstractEntity
      */
     protected static function convertDateTime($date)
     {
-        if(!$date)
-        {
+        if (!$date) {
             return;
         }
 
         $date = \DateTime::createFromFormat('d/m/Y', $date);
 
-        if(!$date)
-        {
+        if (!$date) {
             return;
         }
 
@@ -95,8 +88,7 @@ abstract class AbstractEntity
      */
     protected static function convertToCamelCase($str)
     {
-        $callback = function($match)
-        {
+        $callback = function ($match) {
             return strtoupper($match[2]);
         };
 

@@ -6,7 +6,7 @@ use Imobia\Asaas\Entity\MyAccount as MyAccountEntity;
 /**
  * MyAccount API Endpoint
  *
- * @author Mateus Belli <mateus@useimobia.com>
+ * @author Mateus Belli <mateusbelli@hotmail.com>
  */
 class MyAccount extends \Imobia\Asaas\Api\AbstractApi
 {

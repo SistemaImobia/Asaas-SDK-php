@@ -4,7 +4,7 @@ namespace Imobia\Asaas\Entity;
 /**
  * MyAccount Entity
  *
- * @author Mateus Belli <mateus@useimobia.com.br>
+ * @author Mateus Belli <mateusbelli@hotmail.com>
  */
 final class MyAccount extends \Imobia\Asaas\Entity\AbstractEntity
 {
