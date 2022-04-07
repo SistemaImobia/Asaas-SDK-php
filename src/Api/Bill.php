@@ -101,6 +101,6 @@ class Bill extends AbstractApi
      */
     public function cancel($id)
     {
-        return $this->adapter->delete(sprintf('%s/bill/%s', $this->endpoint, $id));
+        return $this->adapter->post(sprintf('%s/bill/%s/cancel', $this->endpoint, $id));
     }
 }
