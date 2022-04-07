@@ -39,6 +39,7 @@ class Bill extends AbstractApi
     public function create(array $data = [])
     {
         $bill = $this->adapter->post(sprintf('%s/bill', $this->endpoint), $data);
+        
         $bill = json_decode($bill);
 
         return new BillEntity($bill);
@@ -47,7 +48,14 @@ class Bill extends AbstractApi
     public function simulate(array $data = [])
     {
         $bill = $this->adapter->post(sprintf('%s/bill/simulate', $this->endpoint), $data);
+        
         $bill = json_decode($bill);
+        
+        // Simulate endpoint return response different, so we have to format
+        // these values to the usual format
+        $return                      = $bill->bankSlipInfo;
+        $return->fee                 = $bill->fee;
+        $return->minimumScheduleDate = $bill->minimumScheduleDate;
 
         return new BillEntity($bill);
     }

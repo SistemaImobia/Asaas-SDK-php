@@ -2,9 +2,12 @@
 
 namespace Imobia\Asaas\Entity;
 
-use Imobia\Asaas\Api\AbstractApi;
-
-class Bill extends AbstractApi
+/**
+ * Bill Entity
+ *
+ * @author Mateus Belli <mateusbelli@hotmail.com>
+ */
+class Bill extends AbstractEntity
 {
     /**
      * @var int
