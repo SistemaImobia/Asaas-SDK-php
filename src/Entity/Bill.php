@@ -78,4 +78,9 @@ class Bill extends AbstractEntity
      * @var string
      */
     public $failReasons;
+
+    /**
+     * @var array
+     */
+    public $bankSlipInfo;
 }
