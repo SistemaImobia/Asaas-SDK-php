@@ -11,6 +11,12 @@ use Imobia\Asaas\Entity\Bill as BillEntity;
  */
 class Bill extends AbstractApi
 {
+    /**
+     * Get all bills
+     *
+     * @param   string  $id  Bill Id
+     * @return  BillEntity
+     */
     public function getAll(array $data = [])
     {
         if (!isset($data['limit'])) {
@@ -36,6 +42,12 @@ class Bill extends AbstractApi
         }, $billsData);
     }
 
+    /**
+     * Pay bill
+     *
+     * @param   string  $id  Bill Id
+     * @return  BillEntity
+     */
     public function create(array $data = [])
     {
         $bill = $this->adapter->post(sprintf('%s/bill', $this->endpoint), $data);
@@ -45,6 +57,12 @@ class Bill extends AbstractApi
         return new BillEntity($bill);
     }
 
+    /**
+     * Simulate Bill payment
+     *
+     * @param   string  $id  Bill Id
+     * @return  BillEntity
+     */
     public function simulate(array $data = [])
     {
         $bill = $this->adapter->post(sprintf('%s/bill/simulate', $this->endpoint), $data);
@@ -60,6 +78,12 @@ class Bill extends AbstractApi
         return new BillEntity($bill);
     }
 
+    /**
+     * Get Bill By Id
+     *
+     * @param   string  $id  Bill Id
+     * @return  BillEntity
+     */
     public function getById($id)
     {
         $payment = $this->adapter->get(sprintf('%s/bill/%s', $this->endpoint, $id));
@@ -69,6 +93,12 @@ class Bill extends AbstractApi
         return new BillEntity($payment);
     }
 
+    /**
+     * Cancel bill
+     *
+     * @param   string  $id  Bill Id
+     * @return  BillEntity
+     */
     public function cancel($id)
     {
         return $this->adapter->delete(sprintf('%s/bill/%s', $this->endpoint, $id));
