@@ -218,4 +218,9 @@ class Asaas
     {
         return new \Imobia\Asaas\Api\Bill($this->adapter, $this->ambiente, $this->versao);
     }
+
+    public function pix()
+    {
+        return new \Imobia\Asaas\Api\Pix($this->adapter, $this->ambiente, $this->versao);
+    }
 }
