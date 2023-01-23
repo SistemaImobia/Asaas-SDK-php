@@ -151,7 +151,8 @@ class GuzzleHttpAdapter implements AdapterInterface
         $content = json_decode($body);
 
         if ($code === 400) {
-            throw new ValidationException(isset($content->message) ? $content->message : $code . ' Dados inválidos.', $code, $content->errors);
+            $error = new ValidationException(isset($content->message) ? $content->message : $code . ' Dados inválidos.', $code, $content->errors);
+            throw $error->getErrors();
         } else if ($code === 403) {
             throw new ForbiddenException(isset($content->message) ? $content->message : $code . ' Operação não permitida.', $code, $content->errors);
         } else {
