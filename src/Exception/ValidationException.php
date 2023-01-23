@@ -8,13 +8,12 @@ class ValidationException extends HttpException
 
     public function __construct($error_message, $reponse_code, $errors)
     {
-        $errorLine    = "";
-        $this->errors = array_map(function ($error) use ($errorLine) {
-            $errorLine .= ' ' . $error->description;
+
+        $this->errors = array_map(function ($error) {
             return $error->description;
         }, $errors);
 
-        parent::__construct($reponse_code . ' ' . $errorLine, $reponse_code);
+        parent::__construct($response_code . ' ' . $error_message, $reponse_code, $this->getErrors());
 
     }
 
