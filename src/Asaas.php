@@ -226,6 +226,6 @@ class Asaas
 
     public function commercialInfo()
     {
-        return new \Imobia\Asaas\Api\Pix($this->adapter, $this->ambiente, $this->versao);
+        return new \Imobia\Asaas\Api\CommercialInfo($this->adapter, $this->ambiente, $this->versao);
     }
 }
