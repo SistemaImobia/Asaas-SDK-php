@@ -32,7 +32,7 @@ class FinancialTransaction extends \Imobia\Asaas\Api\AbstractApi
         $extratoData = $extrato->data;
 
         while ($meta->hasMore) {
-            $filters['offset'] += $filters['offset'] > 0 ? $filters['limit'] : $filters['limit'] + 1;
+            $filters['offset'] += $filters['limit'];
             $extrato     = $this->adapter->get(sprintf('%s/financialTransactions?%s', $this->endpoint, http_build_query($filters)));
             $extrato     = json_decode($extrato);
             $meta        = $this->extractMeta($extrato);
