@@ -17,9 +17,33 @@ class BankAccount extends \Imobia\Asaas\Api\AbstractApi
         return new BankAccountEntity(json_decode($balance));
     }
 
-    public function getAllAccounts()
+    public function getAllAccounts($filters = [])
     {
         $balance = $this->adapter->get(sprintf('%s/bankAccounts', $this->endpoint));
+
+        if (!isset($filters['limit'])) {
+            $filters['limit']  = static::DEFAULT_LIMIT;
+            $filters['offset'] = 0;
+        }
+        $balance = $this->adapter->get(sprintf('%s/bankAccounts', $this->endpoint, http_build_query($filters)));
+
+        $balance = json_decode($balance);
+
+        $meta = $this->extractMeta($balance);
+
+        $balanceData = $balance->data;
+
+        while ($meta->hasMore) {
+            $filters['offset'] += $filters['limit'];
+            $balance     = $this->adapter->get(sprintf('%s/bankAccounts', $this->endpoint, http_build_query($filters)));
+            $balance     = json_decode($balance);
+            $meta        = $this->extractMeta($balance);
+            $balanceData = array_merge($balanceData, $balance->data);
+        }
+
+        return array_map(function ($payment) {
+            return new BankAccountEntity($payment);
+        }, $balanceData);
 
         return new BankAccountEntity(json_decode($balance));
     }
