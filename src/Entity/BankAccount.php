@@ -67,6 +67,11 @@ final class BankAccount extends \Imobia\Asaas\Entity\AbstractEntity
     /**
      * @var string
      */
+    public $bankAccountInfoId;
+
+    /**
+     * @var string
+     */
     public $cpfCnpj;
 
     /**
