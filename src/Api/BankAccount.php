@@ -71,7 +71,7 @@ class BankAccount extends \Imobia\Asaas\Api\AbstractApi
      */
     public function delete($id)
     {
-        $bankAccount = $this->adapter->delete(sprintf('%s/bankAccounts?id=', $this->endpoint, $id));
+        $bankAccount = $this->adapter->delete(sprintf('%s/bankAccounts?id=%s', $this->endpoint, $id));
 
         $bankAccount = json_decode($bankAccount);
 
