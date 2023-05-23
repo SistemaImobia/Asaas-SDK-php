@@ -38,4 +38,13 @@ class Webhook extends \Imobia\Asaas\Api\AbstractApi
 
         return new WebhookEntity($webhook);
     }
+
+    public function createTransfer(array $data)
+    {
+        $webhook = $this->adapter->post(sprintf('%s/webhook/transfer', $this->endpoint), $data);
+
+        $webhook = json_decode($webhook);
+
+        return new WebhookEntity($webhook);
+    }
 }
