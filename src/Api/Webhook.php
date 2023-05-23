@@ -24,6 +24,15 @@ class Webhook extends \Imobia\Asaas\Api\AbstractApi
         return new WebhookEntity($webhook);
     }
 
+    public function getAllTransfers()
+    {
+        $webhook = $this->adapter->get(sprintf('%s/webhook/transfer', $this->endpoint));
+
+        $webhook = json_decode($webhook);
+
+        return new WebhookEntity($webhook);
+    }
+
     /**
      * Creates new Webhook
      *
