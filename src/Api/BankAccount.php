@@ -19,13 +19,12 @@ class BankAccount extends \Imobia\Asaas\Api\AbstractApi
 
     public function getAllAccounts($filters = [])
     {
-        $balance = $this->adapter->get(sprintf('%s/bankAccounts', $this->endpoint));
-
         if (!isset($filters['limit'])) {
             $filters['limit']  = static::DEFAULT_LIMIT;
             $filters['offset'] = 0;
         }
-        $balance = $this->adapter->get(sprintf('%s/bankAccounts', $this->endpoint, http_build_query($filters)));
+
+        $balance = $this->adapter->get(sprintf('%s/bankAccounts?%s', $this->endpoint, http_build_query($filters)));
 
         $balance = json_decode($balance);
 
@@ -35,7 +34,7 @@ class BankAccount extends \Imobia\Asaas\Api\AbstractApi
 
         while ($meta->hasMore) {
             $filters['offset'] += $filters['limit'];
-            $balance     = $this->adapter->get(sprintf('%s/bankAccounts', $this->endpoint, http_build_query($filters)));
+            $balance     = $this->adapter->get(sprintf('%s/bankAccounts?%s', $this->endpoint, http_build_query($filters)));
             $balance     = json_decode($balance);
             $meta        = $this->extractMeta($balance);
             $balanceData = array_merge($balanceData, $balance->data);
