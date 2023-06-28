@@ -33,4 +33,12 @@ class MyAccount extends \Imobia\Asaas\Api\AbstractApi
 
         return $documentation;
     }
+
+    public function documents()
+    {
+        $documents = $this->adapter->get(sprintf('%s/myAccount/documents', $this->endpoint));
+
+        return $documents;
+    }
+
 }
