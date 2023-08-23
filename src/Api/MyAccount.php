@@ -41,4 +41,11 @@ class MyAccount extends \Imobia\Asaas\Api\AbstractApi
         return $documents;
     }
 
+    public function createDocument(array $data, string $id)
+    {
+        $documents = $this->adapter->post(sprintf('%s/myAccount/documents/' . $id, $this->endpoint), $data);
+
+        return $documents;
+    }
+
 }
