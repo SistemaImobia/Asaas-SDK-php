@@ -1,8 +1,6 @@
 <?php
 namespace Imobia\Asaas\Api;
 
-use Imobia\Asaas\Entity\CustomerFiscalInfo as EntityCustomerFiscalInfo;
-
 /**
  * Customer Fiscal Info API Endpoint
  *
@@ -21,13 +19,13 @@ class CustomerFiscalInfo extends \Imobia\Asaas\Api\AbstractApi
     {
         $info = $this->adapter->post(sprintf('%s/customerFiscalInfo'), $data);
 
-        return new EntityCustomerFiscalInfo($info);
+        return json_decode($info);
     }
 
     public function getMunicipalOptions()
     {
         $info = $this->adapter->get(sprintf('%s/customerFiscalInfo/municipalOptions', $this->endpoint));
 
-        return new EntityCustomerFiscalInfo($info);
+        return json_decode($info);
     }
 }
