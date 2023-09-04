@@ -17,7 +17,7 @@ class CustomerFiscalInfo extends \Imobia\Asaas\Api\AbstractApi
 
     public function create(array $data)
     {
-        $info = $this->adapter->post(sprintf('%s/customerFiscalInfo'), $data);
+        $info = $this->adapter->post(sprintf('%s/customerFiscalInfo', $this->endpoint), $data);
 
         return json_decode($info);
     }
