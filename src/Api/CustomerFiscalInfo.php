@@ -17,6 +17,17 @@ class CustomerFiscalInfo extends \Imobia\Asaas\Api\AbstractApi
 
     public function create(array $data)
     {
+        if (isset($data['certificateFile'])) {
+            $multipartData = [];
+            foreach ($data as $key => $value) {
+                $multipartData[] = [
+                    'name'     => $key,
+                    'contents' => $value,
+                ];
+            }
+            $info = $this->adapter->post(sprintf('%s/customerFiscalInfo', $this->endpoint), $multipartData, 'multipart');
+        }
+
         $info = $this->adapter->post(sprintf('%s/customerFiscalInfo', $this->endpoint), $data);
 
         return json_decode($info);
