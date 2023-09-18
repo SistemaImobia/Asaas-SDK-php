@@ -26,6 +26,7 @@ class CustomerFiscalInfo extends \Imobia\Asaas\Api\AbstractApi
                 ];
             }
             $info = $this->adapter->post(sprintf('%s/customerFiscalInfo', $this->endpoint), $multipartData, 'multipart');
+            return $info;
         }
 
         $info = $this->adapter->post(sprintf('%s/customerFiscalInfo', $this->endpoint), $data);
