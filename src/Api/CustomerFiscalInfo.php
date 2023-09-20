@@ -17,7 +17,7 @@ class CustomerFiscalInfo extends \Imobia\Asaas\Api\AbstractApi
 
     public function create(array $data)
     {
-        if (isset($data['certificateFile'])) {
+        if (array_key_exists('certificateFile', $data)) {
             $multipartData = [];
             foreach ($data as $key => $value) {
                 $multipartData[] = [
