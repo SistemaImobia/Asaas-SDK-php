@@ -8,6 +8,7 @@ use Imobia\Asaas\Adapter\AdapterInterface;
  *
  * @author Agência Softr <agencia.softr@gmail.com>
  * @author Mateus Belli <mateusbelli@hotmail.com>
+ * @author Marcelo Migliorini <celo_mig@hotmail.com>
  */
 class Asaas
 {

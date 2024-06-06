@@ -5,7 +5,7 @@ namespace Imobia\Asaas\Entity;
 /**
  * Webhooks Entity
  *
- * @author David Berri <dwbwill@gmail.com>
+ * @author Marcelo Migliorini <celo_mig@hotmail.com>
  */
 final class Webhooks extends \Imobia\Asaas\Entity\AbstractEntity
 {

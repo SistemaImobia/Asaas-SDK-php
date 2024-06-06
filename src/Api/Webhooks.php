@@ -6,7 +6,7 @@ use Imobia\Asaas\Entity\Webhooks as WebhooksEntity;
 /**
  * Webhooks API Endpoint
  *
- * @author David Berri <dwbwill@gmail.com>
+ * @author Marcelo Migliorini <celo_mig@hotmail.com>
  */
 class Webhooks extends \Imobia\Asaas\Api\AbstractApi
 {
