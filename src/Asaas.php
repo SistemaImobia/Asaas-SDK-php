@@ -176,6 +176,20 @@ class Asaas
     }
 
     /**
+     * Get webhooks endpoint
+     * 
+     * Asaas modificou o funcionamento, adicionando novo formato de cadastro de webhooks, onde é passado quais os evendos desejamos receber
+     * 
+     * Como há o uso do antigo, foi apenas adicionado o novo. A principal diferença está na chamada, os novos endepoints estão no plural webhookS
+     *
+     * @return  Webhooks
+     */
+    public function webhooks()
+    {
+        return new \Imobia\Asaas\Api\Webhooks($this->adapter, $this->ambiente, $this->versao);
+    }
+
+    /**
      * Get wallets endpoint
      *
      * @return  Wallet
