@@ -179,7 +179,7 @@ class Asaas
     /**
      * Get webhooks endpoint
      * 
-     * Asaas modificou o funcionamento, adicionando novo formato de cadastro de webhooks, onde é passado quais os evendos desejamos receber
+     * Asaas modificou o funcionamento, adicionando novo formato de cadastro de webhooks, onde é passado quais os eventos desejamos receber
      * 
      * Como há o uso do antigo, foi apenas adicionado o novo. A principal diferença está na chamada, os novos endepoints estão no plural webhookS
      *
@@ -203,7 +203,7 @@ class Asaas
     /**
      * Get FinancialTransaction endpoint
      *
-     * @return  Wallet
+     * @return  FinancialTransaction
      */
     public function extrato()
     {
