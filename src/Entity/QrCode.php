@@ -14,6 +14,11 @@ final class QrCode extends \Imobia\Asaas\Entity\AbstractEntity
     public $id;
 
     /**
+     * @var string|null 
+     */
+    public $payload;
+
+    /**
      * @var mixed|null Identificador de ponta a ponta
      */
     public $endToEndIdentifier;
@@ -142,5 +147,83 @@ final class QrCode extends \Imobia\Asaas\Entity\AbstractEntity
      * @var mixed|null Referência externa associada ao QR Code
      */
     public $externalReference;
+
+    // Novos campos adicionados com base no segundo retorno
+
+    /**
+     * @var string|null Chave PIX associada ao QR Code
+     */
+    public $pixKey;
+
+    /**
+     * @var string|null Identificador de conciliação
+     */
+    public $conciliationIdentifier;
+
+    /**
+     * @var string|null Tipo de transação do QR Code
+     */
+    public $transactionOriginType;
+
+    /**
+     * @var string|null Data de vencimento do QR Code
+     */
+    public $dueDate;
+
+    /**
+     * @var string|null Data de expiração do QR Code
+     */
+    public $expirationDate;
+
+    /**
+     * @var int|null Valor de juros
+     */
+    public $interest;
+
+    /**
+     * @var int|null Valor de multa
+     */
+    public $fine;
+
+    /**
+     * @var int|null Valor de desconto
+     */
+    public $discount;
+
+    /**
+     * @var int|null Valor total do QR Code
+     */
+    public $totalValue;
+
+    /**
+     * @var bool|null Indica se o QR Code pode ser pago com valor diferente
+     */
+    public $canBePaidWithDifferentValue;
+
+    /**
+     * @var bool|null Indica se o valor de troco pode ser modificado
+     */
+    public $canBeModifyChangeValue;
+
+    /**
+     * @var array|null Informações do recebedor
+     */
+    public $receiver;
+
+    /**
+     * @var array|null Informações do pagador
+     */
+    public $payer;
+
+    /**
+     * @var bool|null Indica se o QR Code pode ser pago
+     */
+    public $canBePaid;
+
+    /**
+     * @var mixed|null Motivo pelo qual o QR Code não pode ser pago
+     */
+    public $cannotBePaidReason;
 }
+
 
