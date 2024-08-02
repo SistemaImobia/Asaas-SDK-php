@@ -21,7 +21,14 @@ class Webhooks extends \Imobia\Asaas\Api\AbstractApi
 
         $webhooks = json_decode($webhooks);
 
-        return new WebhooksEntity($webhooks);
+        // return new WebhooksEntity($webhooks);
+
+        $this->extractMeta($webhooks);
+
+        return array_map(function($webhooks)
+        {
+            return new WebhooksEntity($webhooks);
+        }, $webhooks->data);
     }
 
     /**
