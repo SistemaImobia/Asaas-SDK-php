@@ -38,22 +38,23 @@ class Customization extends \Imobia\Asaas\Api\AbstractApi
             $multipartData = [];
 
             foreach ($data as $key => $value) {
-                // Verifica se o valor é um arquivo existente
-                if (is_file($value)) {
+                if (is_string($value) && is_file($value)) {
+                    $mimeType = mime_content_type($value); // Determina o tipo MIME
+
                     $multipartElement = [
                         'name'     => $key,
                         'contents' => fopen($value, 'r'),
                         'filename' => basename($value),
-                        'headers'  => ['Content-Type' => mime_content_type($value)],
+                        'headers'  => ['Content-Type' => $mimeType],
                     ];
                 } else {
+                    // Apenas valores que não são arquivos são tratados aqui
                     $multipartElement = [
                         'name'     => $key,
                         'contents' => $value,
                     ];
                 }
 
-                $multipartData[] = $multipartElement;
             }
 
             $customization = $this->adapter->post(sprintf('%s/myAccount/paymentCheckoutConfig', $this->endpoint), $multipartData, 'multipart');
