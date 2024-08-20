@@ -47,11 +47,4 @@ class MyAccount extends \Imobia\Asaas\Api\AbstractApi
 
         return $documents;
     }
-
-    public function paymentsConfigs(array $data)
-    {
-        $config = $this->adapter->post(sprintf('%s/myAccount/paymentCheckoutConfig', $this->endpoint), $data);
-
-        return $config;
-    }
 }
