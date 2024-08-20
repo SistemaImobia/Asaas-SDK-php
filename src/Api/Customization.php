@@ -38,19 +38,22 @@ class Customization extends \Imobia\Asaas\Api\AbstractApi
             $multipartData = [];
 
             foreach ($data as $key => $value) {
-                $multipartElement = [
-                    'name'     => $key,
-                    'contents' => is_file($value) ? fopen($value, 'r') : $value,
-                ];
-
-                // Se for um arquivo, adicione o tipo MIME
-                if ($key === 'logoFile' && is_file($value)) {
-                    $multipartElement['filename'] = basename($value);
-                    $multipartElement['headers']  = ['Content-Type' => mime_content_type($value)];
+                // Verifica se o valor é um arquivo existente
+                if (is_file($value)) {
+                    $multipartElement = [
+                        'name'     => $key,
+                        'contents' => fopen($value, 'r'),
+                        'filename' => basename($value),
+                        'headers'  => ['Content-Type' => mime_content_type($value)],
+                    ];
+                } else {
+                    $multipartElement = [
+                        'name'     => $key,
+                        'contents' => $value,
+                    ];
                 }
 
                 $multipartData[] = $multipartElement;
-
             }
 
             $customization = $this->adapter->post(sprintf('%s/myAccount/paymentCheckoutConfig', $this->endpoint), $multipartData, 'multipart');
