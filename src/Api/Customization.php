@@ -33,6 +33,22 @@ class Customization extends \Imobia\Asaas\Api\AbstractApi
      */
     public function update(array $data)
     {
+
+        if (array_key_exists('logoFile', $data)) {
+            $multipartData = [];
+
+            foreach ($data as $key => $value) {
+                $multipartData[] = [
+                    'name'     => $key,
+                    'contents' => is_file($value) ? fopen($value, 'r') : $value,
+                ];
+            }
+
+            $customization = $this->adapter->post(sprintf('%s/myAccount/paymentCheckoutConfig', $this->endpoint), $multipartData, 'multipart');
+
+            return json_decode($customization, true);
+        }
+
         $customization = $this->adapter->post(sprintf('%s/myAccount/paymentCheckoutConfig', $this->endpoint), $data);
 
         $customization = json_decode($customization);
