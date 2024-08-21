@@ -38,7 +38,7 @@ class Customization extends \Imobia\Asaas\Api\AbstractApi
             $multipartData = [];
 
             foreach ($data as $key => $value) {
-                if (is_file($value)) {
+                if ($key === 'logoFile') {
                     $multipartElement = [
                         'name'     => $key,
                         'contents' => fopen($value, 'r'),
