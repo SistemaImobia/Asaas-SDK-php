@@ -46,13 +46,11 @@ class Customization extends \Imobia\Asaas\Api\AbstractApi
                         'headers'  => ['Content-Type' => $value->getMimeType()],
                     ];
                 } elseif (is_resource($value)) {
-                    // Caso o valor seja um recurso de stream
                     $multipartElement = [
                         'name'     => $key,
                         'contents' => $value,
                     ];
                 } else {
-                    // Para valores normais (string, boolean, etc.)
                     $multipartElement = [
                         'name'     => $key,
                         'contents' => is_bool($value) ? ($value ? 'true' : 'false') : $value,

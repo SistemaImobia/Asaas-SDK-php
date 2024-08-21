@@ -19,12 +19,30 @@ class CustomerFiscalInfo extends \Imobia\Asaas\Api\AbstractApi
     {
         if (array_key_exists('certificateFile', $data)) {
             $multipartData = [];
+
             foreach ($data as $key => $value) {
-                $multipartData[] = [
-                    'name'     => $key,
-                    'contents' => $value,
-                ];
+                if ($value instanceof \Illuminate\Http\UploadedFile) {
+                    $multipartElement = [
+                        'name'     => $key,
+                        'contents' => fopen($value->getPathname(), 'r'),
+                        'filename' => $value->getClientOriginalName(),
+                        'headers'  => ['Content-Type' => $value->getMimeType()],
+                    ];
+                } elseif (is_resource($value)) {
+                    $multipartElement = [
+                        'name'     => $key,
+                        'contents' => $value,
+                    ];
+                } else {
+                    $multipartElement = [
+                        'name'     => $key,
+                        'contents' => is_bool($value) ? ($value ? 'true' : 'false') : $value,
+                    ];
+                }
+
+                $multipartData[] = $multipartElement;
             }
+
             $info = $this->adapter->post(sprintf('%s/customerFiscalInfo', $this->endpoint), $multipartData, 'multipart');
             return json_decode($info);
         }
