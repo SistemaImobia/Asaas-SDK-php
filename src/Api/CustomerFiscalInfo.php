@@ -44,6 +44,7 @@ class CustomerFiscalInfo extends \Imobia\Asaas\Api\AbstractApi
             }
 
             $info = $this->adapter->post(sprintf('%s/customerFiscalInfo', $this->endpoint), $multipartData, 'multipart');
+
             return json_decode($info);
         }
 
