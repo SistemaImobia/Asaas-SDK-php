@@ -38,9 +38,9 @@ class Customization extends \Imobia\Asaas\Api\AbstractApi
             $multipartData = [];
 
             foreach ($data as $key => $value) {
-                $multipartElement = [
+                $multipartData[] = [
                     'name'     => $key,
-                    'contents' => $value,
+                    'contents' => is_file($value) ? fopen($value, 'r') : $value,
                 ];
             }
 
