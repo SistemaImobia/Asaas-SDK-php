@@ -39,13 +39,10 @@ class Customization extends \Imobia\Asaas\Api\AbstractApi
 
             foreach ($data as $key => $value) {
                 if ($key === 'logoFile' && is_file($value)) {
-                    $mimeType = mime_content_type($value);
-
                     $multipartElement = [
                         'name'     => $key,
                         'contents' => fopen($value, 'r'),
                         'filename' => basename($value),
-                        'headers'  => ['Content-Type' => $mimeType],
                     ];
                 } else {
                     $multipartElement = [
