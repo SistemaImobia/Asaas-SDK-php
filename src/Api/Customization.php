@@ -37,18 +37,21 @@ class Customization extends \Imobia\Asaas\Api\AbstractApi
         if (array_key_exists('logoFile', $data)) {
             $multipartData = [];
 
-            if ($key === 'logoFile' && $value instanceof \Illuminate\Http\UploadedFile) {
-                $multipartElement = [
-                    'name'     => $key,
-                    'contents' => fopen($value->getPathname(), 'r'),
-                    'filename' => $value->getClientOriginalName(),
-                    'headers'  => ['Content-Type' => $value->getMimeType()],
-                ];
-            } else {
-                $multipartElement = [
-                    'name'     => $key,
-                    'contents' => is_bool($value) ? ($value ? 'true' : 'false') : $value,
-                ];
+            foreach ($data as $key => $value) {
+                if ($key === 'logoFile' && $value instanceof \Illuminate\Http\UploadedFile) {
+                    $multipartElement = [
+                        'name'     => $key,
+                        'contents' => fopen($value->getPathname(), 'r'),
+                        'filename' => $value->getClientOriginalName(),
+                        'headers'  => ['Content-Type' => $value->getMimeType()],
+                    ];
+                } else {
+                    $multipartElement = [
+                        'name'     => $key,
+                        'contents' => is_bool($value) ? ($value ? 'true' : 'false') : $value,
+                    ];
+                }
+
             }
 
             $customization = $this->adapter->post(sprintf('%s/myAccount/paymentCheckoutConfig', $this->endpoint), $multipartData, 'multipart');
