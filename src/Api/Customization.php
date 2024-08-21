@@ -38,20 +38,28 @@ class Customization extends \Imobia\Asaas\Api\AbstractApi
             $multipartData = [];
 
             foreach ($data as $key => $value) {
-                if ($key === 'logoFile' && $value instanceof \Illuminate\Http\UploadedFile) {
+                if ($value instanceof \Illuminate\Http\UploadedFile) {
                     $multipartElement = [
                         'name'     => $key,
                         'contents' => fopen($value->getPathname(), 'r'),
                         'filename' => $value->getClientOriginalName(),
                         'headers'  => ['Content-Type' => $value->getMimeType()],
                     ];
+                } elseif (is_resource($value)) {
+                    // Caso o valor seja um recurso de stream
+                    $multipartElement = [
+                        'name'     => $key,
+                        'contents' => $value,
+                    ];
                 } else {
+                    // Para valores normais (string, boolean, etc.)
                     $multipartElement = [
                         'name'     => $key,
                         'contents' => is_bool($value) ? ($value ? 'true' : 'false') : $value,
                     ];
                 }
 
+                $multipartData[] = $multipartElement;
             }
 
             $customization = $this->adapter->post(sprintf('%s/myAccount/paymentCheckoutConfig', $this->endpoint), $multipartData, 'multipart');
