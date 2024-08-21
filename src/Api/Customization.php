@@ -38,19 +38,10 @@ class Customization extends \Imobia\Asaas\Api\AbstractApi
             $multipartData = [];
 
             foreach ($data as $key => $value) {
-                if ($key === 'logoFile') {
-                    $multipartElement = [
-                        'name'     => $key,
-                        'contents' => fopen($value, 'r'),
-                        'filename' => basename($value),
-                    ];
-                } else {
-                    $multipartElement = [
-                        'name'     => $key,
-                        'contents' => $value,
-                    ];
-                }
-
+                $multipartElement = [
+                    'name'     => $key,
+                    'contents' => $value,
+                ];
             }
 
             $customization = $this->adapter->post(sprintf('%s/myAccount/paymentCheckoutConfig', $this->endpoint), $multipartData, 'multipart');
