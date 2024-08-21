@@ -38,17 +38,13 @@ class Customization extends \Imobia\Asaas\Api\AbstractApi
             $multipartData = [];
 
             foreach ($data as $key => $value) {
-                if (is_string($value) && is_file($value)) {
-                    $mimeType = mime_content_type($value); // Determina o tipo MIME
-
+                if (is_file($value)) {
                     $multipartElement = [
                         'name'     => $key,
                         'contents' => fopen($value, 'r'),
                         'filename' => basename($value),
-                        'headers'  => ['Content-Type' => $mimeType],
                     ];
                 } else {
-                    // Apenas valores que não são arquivos são tratados aqui
                     $multipartElement = [
                         'name'     => $key,
                         'contents' => $value,
