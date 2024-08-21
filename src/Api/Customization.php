@@ -37,10 +37,17 @@ class Customization extends \Imobia\Asaas\Api\AbstractApi
         if (array_key_exists('logoFile', $data)) {
             $multipartData = [];
 
-            foreach ($data as $key => $value) {
-                $multipartData[] = [
+            if ($key === 'logoFile' && $value instanceof \Illuminate\Http\UploadedFile) {
+                $multipartElement = [
                     'name'     => $key,
-                    'contents' => is_file($value) ? fopen($value, 'r') : $value,
+                    'contents' => fopen($value->getPathname(), 'r'),
+                    'filename' => $value->getClientOriginalName(),
+                    'headers'  => ['Content-Type' => $value->getMimeType()],
+                ];
+            } else {
+                $multipartElement = [
+                    'name'     => $key,
+                    'contents' => is_bool($value) ? ($value ? 'true' : 'false') : $value,
                 ];
             }
 
