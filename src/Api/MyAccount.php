@@ -79,9 +79,9 @@ class MyAccount extends \Imobia\Asaas\Api\AbstractApi
         return $documents;
     }
 
-    public function update()
+    public function update(array $data)
     {
-        $update = $this->adapter->put(sprintf('%s/myAccount/commercialInfo', $this->endpoint));
+        $update = $this->adapter->put(sprintf('%s/myAccount/commercialInfo', $this->endpoint), $data);
 
         return $update;
     }
