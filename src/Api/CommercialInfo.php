@@ -27,7 +27,7 @@ class CommercialInfo extends \Imobia\Asaas\Api\AbstractApi
 
     public function update(array $data)
     {
-        $update = $this->adapter->post(sprintf('%s/myAccount/commercialInfo', $this->endpoint), $data);
+        $update = $this->adapter->put(sprintf('%s/myAccount/commercialInfo', $this->endpoint), $data);
 
         $update = json_decode($update);
 
