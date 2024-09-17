@@ -16,7 +16,7 @@ abstract class AbstractApi
      *
      * @var string
      */
-    const ENDPOINT_PRODUCAO = 'https://www.asaas.com/api/';
+    const ENDPOINT_PRODUCAO = 'https://api.asaas.com/';
 
     /**
      * Endpoint Sandbox
